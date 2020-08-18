@@ -68,7 +68,7 @@ app.delete('/api/candidate/:id', (req, res) => {
         changes: this.changes
       });
     });
-  });
+});
 
 // Create a candidate
 app.post('/api/candidate', ({ body }, res) => {
@@ -77,11 +77,11 @@ app.post('/api/candidate', ({ body }, res) => {
       res.status(400).json({ error: errors });
       return;
     }
-  });
+});
 
 db.all(`SELECT * FROM candidates`, (err, rows) => {
     console.log(rows);
-  });
+});
 
 // Default response for any other request(Not Found) Catch all
 app.use((req, res) => {
